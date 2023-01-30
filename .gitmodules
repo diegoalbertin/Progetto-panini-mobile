@@ -1,0 +1,3 @@
+[submodule "food-api"]
+	path = food-api
+	url = https://github.com/AlbertoPavarin/food-api.git
