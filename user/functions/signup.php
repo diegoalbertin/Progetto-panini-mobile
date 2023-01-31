@@ -1,9 +1,9 @@
 <?php 
+include_once dirname(__FILE__) ."/url.php";
 
 function signup($data)
     {
-        $url = 'http://localhost:8080/Progetto-Panini/food-api/API/user/registration.php';
-        //$url = 'http://localhost/progetti_PHP/food-api/API/user/login.php';
+        $url = getPath().'/API/user/registration.php';
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_URL, $url); // setta l'url
         curl_setopt($curl, CURLOPT_POST, true); // specifica che è una post request
