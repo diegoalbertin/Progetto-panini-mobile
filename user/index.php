@@ -1,5 +1,5 @@
 <?php
-include_once dirname(__DIR__) . '/functions/checkLogin.php';
+include_once dirname(__DIR__) . '/user/functions/checkLogin.php';
 
 session_start();
 

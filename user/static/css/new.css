@@ -1,15 +1,123 @@
-.login-container{
+.login-container, .signup-container{
     margin-top: 40px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     text-align: center;
-    background-color:rgb(255,255,201)	 ;
+    background-color:rgb(255, 255, 160);
+    vertical-align:middle;
+    height:70%;
+    margin-bottom: 30px;
+    border-radius: 20px;
 }
+
 .logo {
 width: 30%!important;
 height: auto!important;
 }
 
-.form-login{
-    padding-top:30px;
+.form-login,.form-signup{
+    padding-top:40px;
+}
+
+.screen-1{
+    height: 60%;
+}
+
+.screen-1 .element input {
+    outline: none;
+    border: none;
+    width: 100%;
+}
+.screen-1 .element input::-moz-placeholder,.screen-1 .element input::placeholder, .screen-1 .element input:-ms-input-placeholder {
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+.screen-1 .element ion-icon {
+    color: #4d4d4d;
+    margin-bottom: -0.2em;
+}
+
+.screen-1 .element{
+    background: white;
+    padding: 0.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: 20px;
+    color: #4d4d4d;
+}
+
+.sec-2{
+    text-align: left;  
+}
+.screen-1 .login {
+    padding: 1em;
+    background: #d33642;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+}
+.screen-1 .footer {
+    display: flex;
+    font-size: 1em;
+    color: #5e5e5e;
+    gap: 0px;
+    margin-top: 10px;
+    text-align: center;
+    margin-right: 0px;
+    padding: 0px;
+}
+.screen-1 .footer span {
+    cursor: pointer;
+}
+  
+  button {
+    cursor: pointer;
+}
+
+.error-login, .error-signup, .error-msg{
+    color: red;
+    font-weight: bold;
+}
+
+.error-msg {
+    font-size: 15px;
+}
+
+.error-login, .error-signup{
+    font-size: 30px;
+}
+.input-container{
+    padding-top: 20px!important;
+
+}
+
+.category-container {
+    border-style: solid;
+    border-color:black; 
+    border-width: 1px;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.img-holder {
+    width: 30px;
+    height: 30px;
+}
+
+.logout-a{
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #5e5e5e;
+}
+
+.form-signup label{
 }
