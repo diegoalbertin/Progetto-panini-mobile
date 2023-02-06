@@ -9,6 +9,9 @@
     margin-bottom: 30px;
     border-radius: 20px;
 }
+.text-center, .icon-container{
+    text-align: center;
+}
 
 .logo {
 width: 30%!important;
@@ -119,5 +122,30 @@ height: auto!important;
     color: #5e5e5e;
 }
 
-.form-signup label{
+.navbar-container{
+    height: 60px;
+    background-color: rgb(244,156,36);
+    border-bottom-left-radius: 30px!important;
+    border-bottom-right-radius: 30px!important;
+
+}
+.navbar {
+    height: 100%;
+}
+.navbar-icon{
+    width: auto !important;
+    height: 40px;   
+    cursor: pointer;
+}
+
+.icon-container{
+    height: 40px;
+}
+
+.information-container{
+    padding-top: 30px;
+}
+
+.information-logo{
+    width: 20%;
 }

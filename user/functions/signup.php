@@ -1,5 +1,6 @@
 <?php 
 include_once dirname(__FILE__) ."/url.php";
+include_once dirname(__FILE__) ."/login.php";
 
 function signup($data)
     {
@@ -26,10 +27,13 @@ function signup($data)
         $response = json_decode($responseJson);
 
         var_dump((array)$response);
-        
-        if ((array)$response->response == true)
+
+        if ($response->response == true)
         {
-            header('Location: login.php');
+            
+            $_SESSION['user_id'] = $response->userID;
+            var_dump($_SESSION);
+            header('Location: index.php');
         }
         else
         {

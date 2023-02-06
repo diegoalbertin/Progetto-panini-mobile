@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     {
       $loginErr = "Email o password errata";
     }
+
   }
   else
   {
@@ -35,11 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     </head>
     <body>
-        <div class="login-container  col-6 offset-3">
+        <div class="login-container  col-sm-10 offset-sm-1 col-md-6 offset-md-3">
           <div class="screen-1 h-50">
             <img src="static/img/app_logo.png" class="logo">
             <form  class="form-login" method="post">
-            <h2>Signup</h2>
+            <h2>Login</h2>
 
               <span class="error-login"><?php echo $loginErr ?></span>
               <div class="input-container">

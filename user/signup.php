@@ -1,4 +1,9 @@
 <?php 
+include_once dirname(__FILE__) . '/functions/signup.php';
+include_once dirname(__FILE__) . '/functions/login.php';
+
+session_start();
+
 $err = "";
 $loginErr = "";
 
@@ -6,16 +11,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (!empty($_POST['sign-name']) && !empty($_POST['sign-surname']) && !empty($_POST['sign-email']) && !empty($_POST['sign-psw']) &&!empty($_POST['sign-psw-2'])) {
    if($_POST['sign-psw']==$_POST['sign-psw-2']){
     $data = [
-        "name"=>$_POST['sign-name'],
-        "surname"=>$_POST['sign-surname'],
-        "email" => $_POST['sign-email'],
-        "password" =>hash("sha256", $_POST['sign-psw']),
-      ];
+    "name"=>$_POST['sign-name'],
+    "surname"=>$_POST['sign-surname'],
+    "email" => $_POST['sign-email'],
+    "password" =>hash("sha256", $_POST['sign-psw']),
+    ];
   
-      if (($data) == -1)
-      {
-        $loginErr = "Email o password errata";
-      }
+    if (signup($data) == -1)
+    {
+    $signupErr = "!! Email errata !!";
+    }else{
+    echo '<script>alert("utente creato")</script>';
+    $loginData=[
+        "email" =>$data['email'],
+        "password" =>$data['password'],
+    ];
+    login($loginData);
+    }
    }
    else{
     $err = "!! Password non corretta !!"; 
@@ -37,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     </head>
     <body>
-        <div class="signup-container col-6 offset-3">
+        <div class="signup-container col-sm-10 offset-sm-1 col-md-6 offset-md-3 ">
             <div class="screen-1">
                 <img src="static/img/app_logo.png" class="logo">
                 <form class="form-signup" method="post" action="">
