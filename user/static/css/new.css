@@ -117,7 +117,7 @@ height: auto!important;
     font-size: 18px;
 }
 
-.footer a{
+.footer a, .logout{
     text-decoration: none;
     color: #5e5e5e;
 }
@@ -148,4 +148,20 @@ height: auto!important;
 
 .information-logo{
     width: 20%;
+}
+
+.logout{
+ color:black!important;
+ font-weight:400;
+}
+
+.logout{
+    padding-top: 10px;
+}
+
+.table-line{
+    border-color: black;
+    border-style: solid;
+    border-width: 0px;
+    border-top-width: 1px!important;
 }

@@ -23,3 +23,4 @@ function getProduct($id)
   return $product_record;
 }
 ?>
+

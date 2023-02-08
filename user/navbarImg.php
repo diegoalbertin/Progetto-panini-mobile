@@ -8,7 +8,7 @@ function switchImg ($url){
         ];
         return $imageLink;
 
-    }else if(str_contains($url,"menu.php")==true){
+    }else if(str_contains($url,"product.php")==true){
         $imageLink=[
             "home"=>"static/img/home.png",
             "profile"=>"static/img/user.png",
