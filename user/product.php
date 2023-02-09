@@ -1,5 +1,7 @@
 <?php 
 include_once dirname(__DIR__) . '/user/functions/checkLogin.php';
+include_once dirname(__DIR__) . '/user/functions/checkProduct.php';
+include_once dirname(__DIR__) . '/user/functions/getCategories.php';
 
 include_once dirname(__DIR__) . '/user/navbarImg.php';
 session_start();
@@ -7,11 +9,12 @@ $user = checkLogin();
 
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $imageLink=switchImg($actual_link);
-
-
+$categories=getCategories();
+//$activeProducts=checkProduct();
 ?>
 <!DOCTYPE html>
 <html>
+
 
     <head>
         <title>sandwech</title>
@@ -42,7 +45,15 @@ $imageLink=switchImg($actual_link);
                 <h1>Benvenuto <?php echo $user[0]->name;?></h1>
             </div>
         </div>
-        
+        <div class="row">
+            <div class="form-container">
+                <?php foreach($categories as $cat){?>
+                    <div>
+                    </div>
+                   <?php //getActiveProductByTag
+                }?>
+            </div>
+        </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>

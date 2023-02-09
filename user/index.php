@@ -41,13 +41,14 @@ $archiveUserOrder=getArchiveUserOrders($_SESSION['user_id']);
                     </div>
                     <div class="navbar col-3">
                             <div class="icon-container col-4 offset-4">
-                                <a href="cart.php"><img style="height:90%; padding-top:10px;" class="navbar-icon" src="static/img/shopping-cart.png" alt="error"></a>        
+                                <a href="cart.php"><img class="navbar-icon cart-icon" src=<?php echo $imageLink['cart'];?> alt="error"></a>        
                             </div>
                             <a class="logout col-4 " href="functions/logout.php">Logout</a>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="information-container text-center">
                 <img src="static/img/app_logo.png" class="information-logo">

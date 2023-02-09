@@ -158,7 +158,10 @@ height: auto!important;
 .logout{
     padding-top: 10px;
 }
-
+.cart-icon{
+    height:90%; 
+    padding-top:10px;
+}
 .table-line{
     border-color: black;
     border-style: solid;

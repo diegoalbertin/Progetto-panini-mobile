@@ -1,6 +1,6 @@
 <?php
 function getPath(){
-    $pathToApi= 'http://localhost/progetti_PHP/Progetto-Panini/food-api';
+    $pathToApi= 'http://localhost/Progetto-panini-utente/food-api';
     return $pathToApi;
 }
 ?>
