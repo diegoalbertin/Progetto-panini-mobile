@@ -36,14 +36,14 @@ $archiveUserOrder=getArchiveUserOrders($_SESSION['user_id']);
                         <a href="index.php"><img class="navbar-icon" src=<?php echo $imageLink['home'];?> alt="error"></a>  
                         </div>
                         <div class="icon-container col-4">
-                        <a href="product.php"><img class="navbar-icon" src=<?php echo $imageLink['sandwich'];?> alt="error"></a>        
+                        <a href="category.php"><img class="navbar-icon" src=<?php echo $imageLink['sandwich'];?> alt="error"></a>        
                         </div>
                     </div>
                     <div class="navbar col-3">
                             <div class="icon-container col-4 offset-4">
                                 <a href="cart.php"><img class="navbar-icon cart-icon" src=<?php echo $imageLink['cart'];?> alt="error"></a>        
                             </div>
-                            <a class="logout col-4 " href="functions/logout.php">Logout</a>
+                            <a class="logout col-4" href="functions/logout.php">Logout</a>
                     </div>
                 </div>
             </div>
@@ -65,8 +65,7 @@ $archiveUserOrder=getArchiveUserOrders($_SESSION['user_id']);
                     $break=getBreak($archiveOrder->break);
                     $status=getStatus($archiveOrder->status);
                     $productOrder=getOrderProducts($archiveOrder->id);
-                    
-                    ?>
+                ?>
             <div class="archiveOrder-container col-10 offset-1">
 
                             <table class="table table-hover table-responsive table-borderless">
@@ -80,36 +79,39 @@ $archiveUserOrder=getArchiveUserOrders($_SESSION['user_id']);
                             </tr>
                         </thead>
                         <tbody >
-                            <tr>
+                            <tr class="table-line-bottom">
                             <th scope="row"><?php echo $archiveOrder->id;?></th>
                             <td><?php echo $archiveOrder->created;?></td>
                             <td><?php echo $pickup[0]->name;?></td>
                             <td><?php echo $break[0]->time;?></td>
                             <td><?php echo $status[0]->description;?></td>
-                            </tr>                            
-                            <th scope="row">prodotti ordinati:</th>
-                            <td>
-                                <?php foreach($productOrder as $productID){
-                                    $product = getProduct($productID->product);
-                                    $G= $product['name'];
-
-                                    echo '<p> -'.$G."<p>\n";
-                                    } ?>
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            </tr>
                         </tbody>
+                        </table><table class="table table-hover table-responsive table-borderless">
+                        <thead>
+                            <tr>                            
+                            <th class="" scope="row">prodotti ordinati:</th></tr></thead>
+                            <tbody>
+                                <?php foreach($productOrder as $productID){?>
+                                    <tr>
+                                    <td scope="row">
+                                        <?php 
+                                            $product = getProduct($productID->product);
+                                            echo '<div class="row">';
+                                            echo '<div class=" col-6"><p>-'.$product['name']."<p></div>";
+                                            echo '<div class=" col-6"><p>quantità: '.$productID->quantity."<p></div>\n"; 
+                                            echo '</div>';
+                                        ?>
+                                    </td></tr>
+                                    <?php }?>
+                            </tr>
+                            </tbody>
                         </table>
                         <div class="row"></div><div class="table-line"></div></div>
                         <?php }}?>
 
             </div>
             <?php } ?>
-        </div>
-
-        <div>
-            <a href="functions/logout.php"><button>logout</button></a>
         </div>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

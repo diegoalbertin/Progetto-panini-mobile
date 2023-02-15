@@ -117,7 +117,7 @@ height: auto!important;
     font-size: 18px;
 }
 
-.footer a, .logout{
+.footer a, .logout, .category{
     text-decoration: none;
     color: #5e5e5e;
 }
@@ -167,4 +167,62 @@ height: auto!important;
     border-style: solid;
     border-width: 0px;
     border-top-width: 1px!important;
+}
+
+.category-div{
+    border-style: solid;
+    border-color: #4d4d4d;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+.category-icon-div,.product-container{
+    text-align: center;
+    align-content: center;
+}
+.category-icon{
+    width: auto;
+    height: 50px;
+    padding-top: 5px;
+    margin-left:5px;
+}
+.table-line-bottom{
+    border-color: black;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 1px!important;
+}
+.product-container{
+    padding-right: 0px!important;
+    margin-right: 0px!important;
+
+}
+.product-name{
+    background: rgb(244,156,36);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.product-information{
+    padding-top: 20px;
+    padding-right: 0px!important;
+    background-color:rgb(255, 255, 160);
+}
+.h1-product-name{
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+}
+.product-description-price,.product-nutritionalValues{
+    padding-top:20px!important;
+}
+.product-description{
+    padding-top: 10px;
+}
+.addToCart{
+    margin-top: 20px!important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(244,156,36);
+}
+.form-element{
+    margin-top: 10px !important;
 }

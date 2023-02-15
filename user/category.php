@@ -1,6 +1,7 @@
 <?php 
 include_once dirname(__DIR__) . '/user/functions/checkLogin.php';
-include_once dirname(__DIR__) . '/user/functions/getActiveProductByTag.php';
+include_once dirname(__DIR__) . '/user/functions/checkProduct.php';
+include_once dirname(__DIR__) . '/user/functions/getCategories.php';
 
 include_once dirname(__DIR__) . '/user/navbarImg.php';
 session_start();
@@ -8,9 +9,18 @@ $user = checkLogin();
 
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $imageLink=switchImg($actual_link);
-$category_id= $_GET['CATEGORY_ID'];
-$activeProduct=getActiveProductByTag($category_id);
-//getProduct non ritorna i valori nutrizionali
+$categories=getCategories();
+
+function getCategoryImg($categories, $categoryName){
+
+    foreach($categories as $category){
+        if(str_contains($categoryName,$category->name)==true){
+            $path="static/img/$category->name.png";
+            return $path;
+        }
+    }
+    return "static/img/sandwich.png";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +43,7 @@ $activeProduct=getActiveProductByTag($category_id);
                         <a href="index.php"><img class="navbar-icon" src=<?php echo $imageLink['home'];?> alt="error"></a>  
                         </div>
                         <div class="icon-container col-4">
-                        <a href="category.php"><img class="navbar-icon" src=<?php echo $imageLink['sandwich'];?> alt="error"></a>        
+                        <a href="index.php"><img class="navbar-icon" src=<?php echo $imageLink['sandwich'];?> alt="error"></a>        
                         </div>
                     </div>
                 </div>
@@ -42,21 +52,21 @@ $activeProduct=getActiveProductByTag($category_id);
         <div class="row">
             <div class="information-container text-center">
                 <img src="static/img/app_logo.png" class="information-logo">
-                <h1>Prodotti</h1>
+                <h1>Benvenuto <?php echo $user[0]->name;?></h1>
             </div>
         </div>
         <div class="row">
             <div class="form-container">
-                <?php foreach($activeProduct as $prod){?>
+                <?php foreach($categories as $category){?>
                     <div class="row">
-                        <a class="category" href="singleProduct.php?PRODUCT_ID=<?php echo $prod->id; ?>">
+                        <a class="category" href="product.php?CATEGORY_ID=<?php echo $category->id; ?>">
                             <div class="category-div col-6 offset-3">
                                 <div class="row">
                                     <div class="category-icon-div col-1">
-                                        <img class="category-icon" src="static/img/panini.png" alt="">
+                                        <img class="category-icon" src=<?php echo getCategoryImg($categories,$category->name);?> alt="">
                                     </div>
                                     <div class="category-name col-11">
-                                        <h1><?php echo $prod->name;?></h1>
+                                        <h1><?php echo $category->name;?></h1>
                                     </div>
                                 </div>
                             </div>

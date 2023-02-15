@@ -17,6 +17,7 @@ function getProduct($id)
         'tag' => $prod["Tag"],
         'quantity' => $prod['quantity'],
         'description' =>$prod["description"],
+        'nutritional_value'=> $prod["nutritional_value"]
     );
   array_push($product,$product_record);
   }
