@@ -30,7 +30,7 @@ $archiveUserOrder=getArchiveUserOrders($_SESSION['user_id']);
                 <div class="row">
                     <div class="navbar  col-6 offset-3">
                         <div class="icon-container col-4">
-                            <a href="index.php"><img class="navbar-icon" src=<?php echo $imageLink['profile'];?> alt="error"></a>
+                            <a href="profile.php"><img class="navbar-icon" src=<?php echo $imageLink['profile'];?> alt="error"></a>
                         </div>
                         <div class="icon-container col-4">
                         <a href="index.php"><img class="navbar-icon" src=<?php echo $imageLink['home'];?> alt="error"></a>  

@@ -37,14 +37,20 @@ function getCategoryImg($categories, $categoryName){
                 <div class="row">
                     <div class="navbar  col-6 offset-3">
                         <div class="icon-container col-4">
-                            <a href="index.php"><img class="navbar-icon" src=<?php echo $imageLink['profile'];?> alt="error"></a>
+                            <a href="profile.php"><img class="navbar-icon" src=<?php echo $imageLink['profile'];?> alt="error"></a>
                         </div>
                         <div class="icon-container col-4">
                         <a href="index.php"><img class="navbar-icon" src=<?php echo $imageLink['home'];?> alt="error"></a>  
                         </div>
                         <div class="icon-container col-4">
-                        <a href="index.php"><img class="navbar-icon" src=<?php echo $imageLink['sandwich'];?> alt="error"></a>        
+                        <a href="category.php"><img class="navbar-icon" src=<?php echo $imageLink['sandwich'];?> alt="error"></a>        
                         </div>
+                    </div>
+                    <div class="navbar col-3">
+                            <div class="icon-container col-4 offset-4">
+                                <a href="cart.php"><img class="navbar-icon cart-icon" src=<?php echo $imageLink['cart'];?> alt="error"></a>        
+                            </div>
+                            <a class="logout col-4" href="functions/logout.php">Logout</a>
                     </div>
                 </div>
             </div>
